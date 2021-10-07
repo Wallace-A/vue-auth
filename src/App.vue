@@ -17,6 +17,7 @@ export default {
       firebase.auth().onAuthStateChanged((user) => {
         //if no user then go to login, else go to home page 
         if(!user) {
+          console.log("no user");
           router.replace("/login");
         } else if (route.path == "/login" || route.path == "/register") {
           router.replace("/");
